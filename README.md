@@ -5,6 +5,11 @@ This is a stand alone java application (maven based) that tracks after the serve
 
 If the HTML response is **200** - it is OK, otherwise, it sends a mail to the preconfigured recipients
 
+## Why did I do that
+I needed to monitor the liveliness of my server. At first I was looking for SAAS solution that will help me with that.
+I found some but they were a little expensive and not user friendly, do I've decided to create one of my own.
+It was rather easy and fun and I let you decide weather to use it or not.
+
 ## Prerequisites
 If you want `host-tracker` to work you need the following:
 - working with linux OS (Ubuntu, Centos, etc...) that runs cron jobs
@@ -21,6 +26,27 @@ Also, in `HostTracker` in the `main` method there are the following variables
 `from` who sends the mail
 `subject` the mail subject
 `message` the actual message
+
+**Important**
+If you consider using gmail as your mail provider you should pay attention to the first mail you send.
+You suppose to get a response from gmail that says the following:
+
+```
+Review blocked sign-in attempt
+------------------------------
+
+Hi Shai,
+Google just blocked someone from signing into your Google Account shai.amar@example.com from an app that may put your account at risk.
+Less secure app
+
+...
+
+Are you the one who tried signing in?
+Google will continue to block sign-in attempts from the app you're using because it has known security problems or is out of date. You can continue to use this app by ALLOWING ACCESS TO LESS SECURE APPS, but this may leave your account vulnerable.
+
+The Google Accounts team
+```
+Click on the **allowing access to less secure apps** URL to let `host-tracker` send emails via this account.
 
 ## Deployment
 
