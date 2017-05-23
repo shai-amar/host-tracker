@@ -98,6 +98,9 @@ Now after the `host-tracker.sh` script was created successfully we need to confi
 - press `^X` and `Y` for save
 and that is it
 
+**Important**
+cron has a limited environment so it is crucial that you specify the full path of the script and `java` program so `cron` will be able to run it properly.
+
 Now you have a program that checks that the server is alive every 5 minutes.
 
 
