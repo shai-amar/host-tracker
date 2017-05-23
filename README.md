@@ -1,5 +1,5 @@
 # host-tracker
-This is a tand alone java application (maven based) that tracks after the server and let the developer know weather its alive or not
+This is a stand alone java application (maven based) that tracks after the server and let the developer know weather its alive or not
 
 `host-tracker` sends the `URL` as a GET request and check for the response
 
@@ -25,6 +25,11 @@ Also, in `HostTracker` in the `main` method there are the following variables
 ## Deployment
 
 ### Compile and package
+
+#### Prerequisites
+- installed java
+- installed maven
+
 In order to package and run the application you need to do the following
 
 ```
