@@ -22,6 +22,7 @@ public class SendGmail
 	{		
 		Properties p = new Properties();
 		
+		//	GMail properties
 		p.put("mail.smtp.auth", "true");
 		p.put("mail.smtp.starttls.enable", "true");
 		p.put("mail.smtp.host", "smtp.gmail.com");
@@ -46,8 +47,8 @@ public class SendGmail
 			m.setSubject(subject);
 			m.setText(message);
 			
+			System.out.println("Sending the message...");
 			Transport.send(m);
-			
 			System.out.println("Message sent.");
 		} 
 		catch (AddressException e) {

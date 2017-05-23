@@ -13,33 +13,32 @@ import javax.mail.internet.InternetAddress;
 public class HostTracker {
 	
 	public static void main(String[] args) {
-		System.out.println("Starting the Host Tracker...");
 		
 		HostTracker h = new HostTracker();
 		
 		
-		String urlStr = "https://pix2you.com/is_alive";
-		System.out.println("URL:" + urlStr);
+		//	The URL you wish to check (this one is not real)
+		//	Normally it is a GET request that returns a is_alive response (HTML status 200)
+		String urlStr = "https://example.com/is_alive";
 
 		boolean hostAvailable = h.checkHostAvailability(urlStr);
 		
 		if(!hostAvailable)
 		{
-			SendGmail gmail = new SendGmail("shai.amar@isityou-online.com", "Zinazina10");
+			// You need to configure a mail that sends the mails to the proper administrators
+			SendGmail gmail = new SendGmail("my_name@gmail.com", "password");
 			
 			InternetAddress[] toArray;
 			try {
-				toArray = InternetAddress.parse("eitan.brown@isityou-online.com, shai.amar@isityou-online.com");
+				toArray = InternetAddress.parse("shai.amar@example.com, eitan.brown@example.com");
 				
-				String from = "shai.amar@isityou-online.com";
-				String subject = "Pix2You.com is not available";
+				String from = "my_name@gmail.com";
+				String subject = "The subject of the mail";
 
-				String message = "pix2you.com is not available at the moment. Please contact your administrator for help.";
+				String message = "This server is not available at the moment. Please contact your administrator for help.";
 				
 				gmail.sendMessage(from, toArray, subject, message);
 				
-				System.out.println("Complete");
-
 			} 
 			catch (AddressException e) {
 				e.printStackTrace();
@@ -52,7 +51,6 @@ public class HostTracker {
 	{
 		if(urlStr == "")
 		{
-			System.out.println("The URL is empty.");
 			return false;
 		}
 		else
@@ -66,7 +64,6 @@ public class HostTracker {
 				con.setRequestMethod("GET");
 				
 				int responseCode = con.getResponseCode();
-				System.out.println("Response code:" + responseCode);
 				
 				// Reading response from input Stream
 				BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
