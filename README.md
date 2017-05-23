@@ -5,6 +5,12 @@ This is a tand alone java application (maven based) that tracks after the server
 
 If the HTML response is **200** - it is OK, otherwise, it sends a mail to the preconfigured recipients
 
+## Prerequisites
+If you want `host-tracker` to work you need the following:
+- working with linux OS (Ubuntu, Centos, etc...) that runs cron jobs
+- create in advance in the seerver a GET request calls `is_alive` that returns something in response, doesn't really matter what as long as it is return HTML status code of `200` in case of a success
+
+
 ## Configuration
 Before you start using the application you need to fill the following variables that are in `HostTracker` class:
 - `MAIL` the mail you use to send mails
