@@ -15,8 +15,8 @@ It was rather easy and fun and I let you decide weather to use it or not.
 
 ## Prerequisites
 If you want `host-tracker` to work you need the following:
-- working with linux OS (Ubuntu, Centos, etc...) that runs cron jobs
-- create in advance in the seerver a GET request calls `is_alive` that returns something in response, doesn't really matter what as long as it is return HTML status code of `200` in case of a success
+- working with linux OS (Ubuntu, Centos, etc...) that runs `cron` jobs
+- create in advance in the requested server an `is_alive` GET request that returns something in response, doesn't really matter as long as it is return HTML status code of `200` in case of a success (in case of a fail it can return anything else)
 
 
 ## Configuration
