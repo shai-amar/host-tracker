@@ -16,8 +16,9 @@ Also, in `HostTracker` in the `main` method there are the following variables
 `subject` the mail subject
 `message` the actual message
 
-## Packaging
+## Deployment
 
+### Compile and package
 In order to package and run the application you need to do the following
 
 ```
@@ -32,4 +33,33 @@ java -jar target/host-tracker-1.0-SNAPSHOT-shaded.jar
 
 ```
 
-Now create the 
+### Create the script
+
+If we want `host-tracker` to run on a regular basis we need to create a script that will be activated on a regular basis with `crontab`
+
+You need to create the following script named `host-tracker.sh` with the following command `vi host-tracker.sh`:
+
+```
+#!/bin/bash
+
+echo "Starting Host-Tracker script"
+
+/full/path/to/java/java -jar  full/path/to/host-tracker-1.0-SNAPSHOT.jar
+
+echo "Done."
+```
+
+### Configure crontab
+
+Now after the `host-tracker.sh` script was created successfully we need to configure the crontab to activate it
+
+- open crontab with `crontab -e`
+- we want the `host-tracker.sh` script to run every 5 minutes so we need to add the following line to crontab: `*/5 * * * * /home/ubuntu/ISITYOU/scripts/hosttracker/host-tracker`
+- press `^X` and `Y` for save
+and that is it
+
+Now you have a program that checks that the server is alive every 5 minutes.
+
+
+
+
