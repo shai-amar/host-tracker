@@ -6,8 +6,11 @@ This is a stand alone java application (maven based) that tracks after the serve
 If the HTML response is **200** - it is OK, otherwise, it sends a mail to the preconfigured recipients
 
 ## Why did I do that
-I needed to monitor the liveliness of my server. At first I was looking for SAAS solution that will help me with that.
-I found some but they were a little expensive and not user friendly, do I've decided to create one of my own.
+I needed to monitor the liveliness of my server. At first, I was looking for a SAAS solution that will help me with that.
+I found some but they were a little expensive and not very user friendly, 
+
+so... 
+I've decided to create one of my own.
 It was rather easy and fun and I let you decide weather to use it or not.
 
 ## Prerequisites
