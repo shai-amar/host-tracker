@@ -1,9 +1,9 @@
 # host-tracker
 This is a stand alone java application (maven based) that tracks after the server and let the developer know weather its alive or not
 
-`host-tracker` sends the `URL` as a GET request and check for the response every 10 seconds for a minute.
+`host-tracker` sends the `URL` as a GET request and check for the response every **10** seconds for a **minute**.
 
-If the HTML response is **200** 4 out of 6 times - it is OK, otherwise, it sends a mail to the preconfigured recipients
+If the HTML response is **200** **4** out of **6** times - it is OK, otherwise, it sends a mail to the preconfigured recipients
 
 ## Why did I do that
 I needed to monitor the liveliness of my server. At first, I was looking for a SAAS solution that will help me with that.
